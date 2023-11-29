@@ -10,6 +10,7 @@ WORKDIR /app
 
 RUN ["pip", "install", "pipenv"]
 RUN ["sh", "-c", "pipenv requirements --dev > requirements.txt"]
+RUN ["rm", "Pipfile", "Pipfile.lock"]
 
 FROM python:3.12 as build
 
